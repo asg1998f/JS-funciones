@@ -69,7 +69,18 @@ function cuentaCaracteres(letras){
 }
 console.log(cuentaCaracteres("treinta"))
 //7
-/*function esPalindromo(cadena){
+function esPalindromo (a){
+    if(typeof a == "string" && a.length>0){
+        let z=a.split("").reverse().join("")
+        if(z==a){
+            return "Es un palindromo"
+        }else{
+            return"No es un palindromo"
+        }
+    }
+}
+
+/*function esPalindrom(cadena){
     let cadenaNormal = cadena.replace()
     let cadenaPal = cadenaNormal.split().reverse()
     if(typeof cadena !== "string" || cadena.length===0){
@@ -78,15 +89,15 @@ console.log(cuentaCaracteres("treinta"))
         cadenaNormal===cadenaPal
     }
 }
-console.log(esPalindromo("somos"))
-console.log(esPalindromo(9))*/
+console.log(esPalindrom("somos"))
+console.log(esPalindrom(9))*/
 //no me sale
 //8
 function getPrecioMostrar(precio) {
     if (typeof precio !== "number") {
         return 'no es un formato correcto';
     }
-    return `${precio.toFixed(2)} €`;
+    return precio.toFixed(2);
 }
 console.log(getPrecioMostrar(2))
 console.log(getPrecioMostrar("ardilla"))
@@ -102,14 +113,37 @@ function matrizNumeros(array) {
 console.log(matrizNumeros([9,2,8,4]))
 //11
 function esPrimo() {
-    let numero = parseInt(prompt("Introduce un número:"));
-    if (isNaN(numero) || numero < 2) {
-        return false;
-    }
-    for (let i = 2; i <= Math.sqrt(numero); i++) {
+    let numero = prompt("Introduce un número:");
+    a=+a
+    if (typeof numero =="number") {
+        let x=0;
+    
+    for (let i = 0; i <= numero; i++) {
         if (numero % i === 0) {
-            return false;
+          x++
+        }
+        if (x==2){
+            alert("Número primo")
+        }
+        else{
+            alert("No número primo")
         }
     }
-    return true;
 }
+}
+/*function primo() {
+    num = +prompt("Give a primo baby: "); // the plus sign in front of prompt convert the string to a number
+  
+    if (num <= 1) {
+      return false;
+    }
+  
+    for (let i = 2; i <= Math.sqrt(num); i++) {
+      if (num % i === 0) {
+        return false; // If divisible by any i, not a prime number
+      }
+    }
+  
+    return true; // If no divisors found, the number is prime
+  }*/
+  
